@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Vanilla JS</h1>
+    <h2 id='place'></h2>
+    <button id='buttoninc'>Increment</button>
+    <button id='buttondec'>Decrement</button>
+
+</body>
+
+<script>
+    // create our data variables
+    let count = 0;
+    const countPosition = document.querySelector('#place');
+    const incrementButton = document.querySelector('#buttoninc');
+    const decrementButton = document.querySelector('#buttondec');
+
+
+    // update the html to show the default number
+    countPosition.innerText = count;
+
+    // listen for the click event and increment our counter
+    incrementButton.addEventListener('click', incrementCounter);
+    function incrementCounter(e) {
+        e.preventDefault();
+        count += 1;
+        countPosition.innerText = count;
+    }
+
+    decrementButton.addEventListener('click', decrementCounter);
+    function decrementCounter(e) {
+        e.preventDefault();
+        count -= 1;
+        countPosition.innerText = count;
+    }
+</script>
+
+</html>
